@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anti-Amyloid Infusion Calculator</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+  <main>
+
+    <h1>Anti-Amyloid Infusion Calculator</h1>
+
+    <p>
+      Calculate infusion dates, MRI monitoring, CMS registry updates,
+      and amyloid PET follow-up dates for Leqembi and Kisunla.
+    </p>
+
+
+    <!-- =========================
+         MEDICATION
+         ========================= -->
+
+    <section>
+
+      <label for="drug">
+        Medication
+      </label>
+
+      <select id="drug" required>
+
+        <option value="">
+          Select medication
+        </option>
+
+        <option value="leqembi">
+          Leqembi (lecanemab)
+        </option>
+
+        <option value="kisunla">
+          Kisunla (donanemab)
+        </option>
+
+      </select>
+
+    </section>
+
+
+    <!-- =========================
+         TREATMENT STATUS
+         ========================= -->
+
+    <section>
+
+      <p>
+        Treatment Status
+      </p>
+
+      <label>
+        <input
+          type="radio"
+          name="treatmentStatus"
+          value="new"
+          checked
+        >
+        Starting treatment
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="treatmentStatus"
+          value="existing"
+        >
+        Already receiving treatment
+      </label>
+
+    </section>
+
+
+    <!-- =========================
+         TREATMENT START DATE
+         ========================= -->
+
+    <section>
+
+      <label for="startDate">
+        Treatment Start Date
+      </label>
+
+      <input
+        type="date"
+        id="startDate"
+        required
+      >
+
+    </section>
+
+
+    <!-- =========================
+         EXISTING PATIENT
+         ========================= -->
+
+    <section id="existingPatientFields" hidden>
+
+      <label for="currentInfusion">
+        Most Recent Infusion Number
+      </label>
+
+      <input
+        type="number"
+        id="currentInfusion"
+        min="1"
+        step="1"
+      >
+
+
+      <label for="lastInfusionDate">
+        Most Recent Infusion Date
+      </label>
+
+      <input
+        type="date"
+        id="lastInfusionDate"
+      >
+
+    </section>
+
+
+    <!-- =========================
+         CALCULATE
+         ========================= -->
+
+    <button id="calculateButton">
+      Calculate
+    </button>
+
+
+    <!-- =========================
+         RESULTS
+         ========================= -->
+
+    <section id="results" hidden>
+
+      <h2>
+        Treatment Schedule
+      </h2>
+
+      <div id="summary"></div>
+
+      <div id="timeline"></div>
+
+    </section>
+
+  </main>
+
+
+  <script type="module" src="app.js"></script>
+
+</body>
+
+</html>
